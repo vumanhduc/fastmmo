@@ -105,23 +105,37 @@ else
                                             <?php $i = 0; foreach($CMSNT->get_list(" SELECT * FROM `taikhoan` WHERE `code` = '".$orders['code']."' ORDER BY id DESC ") as $taikhoan){ ?>
                                             <tr>
                                                 <td width="5%"><?=$i++;?></td>
-                                                <td><textarea id="coypy<?=$taikhoan['id'];?>" class="form-control"
-                                                        readonly><?=$taikhoan['chitiet'];?></textarea></td>
+                                                <td>
+                                                    <textarea style="height: 100px" id="coypy<?=$taikhoan['id'];?>" class="form-control"
+                                                        readonly>
+                                                        <?=$taikhoan['chitiet'];?>
+                                                    </textarea>
+                                                </td>
                                                 <td width="10%">
-                                                    <button type="button" class="btn btn-primary copy"
+                                                    <button style="margin-bottom: 5px" type="button" class="btn btn-primary copy"
                                                         data-clipboard-target="#coypy<?=$taikhoan['id'];?>">
                                                         <span><?=strtoupper(lang(55));?></span></button>
 
-                                                    <a type="button" target="_blank"
-                                                        href="<?=BASE_URL('backup/index.php?uid='.explode("|", $taikhoan['chitiet'])[0]).'&code='.$orders['code'];?>"
-                                                        class="btn btn-danger">
-                                                        <span>
-                                                            <?=lang(56);?>
-                                                        </span>
-                                                    </a>
-
-                                                </td>
-                                            </tr>
+                                                        <?php $phone = explode(' ', $taikhoan['chitiet'])[0];
+                                                            if($taikhoan['accounttype'] == 'telegram') {?>
+                                                            <a type="button" target="_blank"
+                                                                href="<?=BASE_URL('data/?phone='.$phone.'&code='.$code);?>"
+                                                                class="btn btn-danger">
+                                                                <span>
+                                                                    <?=lang(48)?>
+                                                                </span>
+                                                            </a>
+                                                        <?php } else { ?>
+                                                            <a type="button" target="_blank"
+                                                                href="<?=BASE_URL('backup/index.php?uid='.explode("|", $taikhoan['chitiet'])[0]).'&code='.$orders['code'];?>"
+                                                                class="btn btn-danger">
+                                                                <span>
+                                                                    <?=lang(56);?>
+                                                                </span>
+                                                            </a>
+                                                        <?php } ?>
+                                                    </td>
+                                                </tr>
                                             <?php }?>
                                         </tbody>
                                     </table>

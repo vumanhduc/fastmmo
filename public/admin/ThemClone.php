@@ -26,6 +26,8 @@ if(isset($_POST['btnSubmit']) && isset($_POST['list']) && isset($_GET['id']) )
 {
     $value_add = 0;
     $value_update = 0;
+    $acc_type = !empty($_POST['accounttype']) ? $_POST['accounttype'] : '';
+    
     if($getUser['level'] != 'admin')
     {
         admin_msg_error('Chức năng này chỉ dành cho Admin.', '', 1000);
@@ -44,7 +46,8 @@ if(isset($_POST['btnSubmit']) && isset($_POST['list']) && isset($_GET['id']) )
             $isAdd = $CMSNT->insert("taikhoan", array(
                 'chitiet' => $clone,
                 'dichvu' => check_string($_GET['id']),
-                'trangthai' => 'LIVE'
+                'trangthai' => 'LIVE',
+                'accounttype' => $acc_type
             ));
 
             if($isAdd)
@@ -60,7 +63,8 @@ if(isset($_POST['btnSubmit']) && isset($_POST['list']) && isset($_GET['id']) )
                 $isUpdate = $CMSNT->update("taikhoan", array(
                     'chitiet' => $clone,
                     'dichvu' => check_string($_GET['id']),
-                    'trangthai' => 'LIVE'
+                    'trangthai' => 'LIVE',
+                    'accounttype' => $acc_type
                 ), " `id` = '".$row_taikhoan['id']."' ");
                 if($isUpdate)
                 {
@@ -73,6 +77,7 @@ if(isset($_POST['btnSubmit']) && isset($_POST['list']) && isset($_GET['id']) )
                     'chitiet' => $clone,
                     'dichvu' => check_string($_GET['id']),
                     'trangthai' => 'LIVE',
+                    'accounttype' => $acc_type,
                     'code'  => null,
                     'username'  => null,
                     'thoigianmua' => null
@@ -87,8 +92,6 @@ if(isset($_POST['btnSubmit']) && isset($_POST['list']) && isset($_GET['id']) )
     echo '<script type="text/javascript">Swal.fire("Thành Công", "Thêm '.$value_add.' | Cập nhật '.$value_update.' thành công" ,"success");</script>';
 }
 ?>
-
-
 
 <div class="content-wrapper">
     <section class="content-header">
@@ -119,6 +122,20 @@ if(isset($_POST['btnSubmit']) && isset($_POST['list']) && isset($_GET['id']) )
                                 <div class="col-sm-9">
                                     <div class="form-line">
                                         <input type="text" value="<?=$row['dichvu'];?>" class="form-control" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Loại tài khoản</label>
+                                <div class="col-sm-9">
+                                    <div class="form-line">
+                                        <select class="form-control" name="accounttype" required>
+                                            <option value="">--Chọn--</option>
+                                            <option value="twitter">Twitter</option>
+                                            <option value="telegram">Telegram</option>
+                                            <option value="discord">Discord</option>
+                                            <option value="other">Khác</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

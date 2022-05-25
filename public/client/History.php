@@ -42,7 +42,7 @@
                                         <td>
                                             <a type="button" href="<?=BASE_URL('Order/');?><?=$row['code'];?>"
                                                 class="btn btn-primary btn-block"><?=lang(47);?></a>
-                                            <button type="button" data-toggle="modal"
+                                            <button style="margin-left: auto" type="button" data-toggle="modal"
                                                 data-target="#modal-taive-<?=$row['id'];?>"
                                                 class="btn btn-danger btn-block"><?=lang(48);?></button>
                                         </td>
