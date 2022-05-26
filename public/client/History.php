@@ -13,20 +13,20 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="element-wrapper">
-                    <div class="element-header"> <?=strtoupper(lang(36));?></div>
+                    <div class="element-header uppercase"> <?=lang(36)?></div>
                     <div class="element-box">
                         <div class="table-responsive">
                             <table id="datatable" width="100%" class="table table-padded">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th><?=strtoupper(lang(53));?></th>
-                                        <th><?=strtoupper(lang(77));?></th>
-                                        <th><?=strtoupper(lang(45));?></th>
-                                        <th><?=strtoupper(lang(46));?></th>
-                                        <th><?=strtoupper(lang(52));?></th>
-                                        <th><?=strtoupper(lang(51));?></th>
-                                        <th><?=strtoupper(lang(79));?></th>
+                                        <th class="uppercase"><?=lang(53)?></th>
+                                        <th class="uppercase"><?=lang(77)?></th>
+                                        <th class="uppercase"><?=lang(45)?></th>
+                                        <th class="uppercase"><?=lang(46)?></th>
+                                        <th class="uppercase"><?=lang(52)?></th>
+                                        <th class="uppercase"><?=lang(51)?></th>
+                                        <th class="uppercase"><?=lang(79)?></th>
                                     </tr>
                                 </thead>
                                 <tbody>

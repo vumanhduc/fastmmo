@@ -3,7 +3,7 @@
 <?php foreach($CMSNT->get_list("SELECT * FROM `category` WHERE `display` = 'SHOW' ORDER BY `stt` ") as $category) { ?>
 <div class="col-sm-12">
     <div class="element-wrapper">
-        <h6 class="element-header"><?=strtoupper($category['title']);?></h6>
+        <h6 class="element-header uppercase"><?=$category['title']?></h6>
         <div class="element-box-tp">
             <?php if($CMSNT->site('type_buy') == 'LIST'){ ?>
             <div class="table-responsive">

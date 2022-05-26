@@ -33,25 +33,25 @@ else
                 <div class="row">
                     <div class="col-sm-4 col-xxxl-3">
                         <a class="element-box el-tablo" href="#">
-                            <div class="label"><?=strtoupper(lang(46));?></div>
+                            <div class="label uppercase"><?=lang(46)?></div>
                             <div class="value" style="font-size: 15px;"><?=format_currency($orders['sotien']);?></div>
                         </a>
                     </div>
                     <div class="col-sm-4 col-xxxl-3">
                         <a class="element-box el-tablo" href="#">
-                            <div class="label"><?=strtoupper(lang(51));?></div>
+                            <div class="label uppercase"><?=lang(51)?></div>
                             <div class="value" style="font-size: 15px;"><?=timeAgo($orders['time']);?></div>
                         </a>
                     </div>
                     <div class="col-sm-4 col-xxxl-3">
                         <a class="element-box el-tablo" href="#">
-                            <div class="label"><?=strtoupper(lang(52));?></div>
+                            <div class="label uppercase"><?=lang(52)?></div>
                             <div class="value" style="font-size: 15px;"><?=$orders['loai'];?></div>
                         </a>
                     </div>
                     <div class="col-sm-4 col-xxxl-3">
                         <a class="element-box el-tablo" href="#">
-                            <div class="label"><?=strtoupper(lang(53));?></div>
+                            <div class="label uppercase"><?=lang(53)?></div>
                             <div class="value" style="font-size: 15px;"><?=$orders['code'];?></div>
                         </a>
                     </div>
@@ -59,7 +59,7 @@ else
             </div>
             <div class="col-sm-12">
                 <div class="element-wrapper">
-                    <div class="element-header"> <?=strtoupper(lang(54));?></div>
+                    <div class="element-header uppercase"> <?=lang(54)?></div>
                     <div class="alert alert-warning borderless">
                         <?=$CMSNT->get_row("SELECT * FROM `dichvu` WHERE `dichvu` = '".$orders['dichvu']."'  ")['luuy'];?>
                     </div>
@@ -107,14 +107,12 @@ else
                                                 <td width="5%"><?=$i++;?></td>
                                                 <td>
                                                     <textarea style="height: 100px" id="coypy<?=$taikhoan['id'];?>" class="form-control"
-                                                        readonly>
-                                                        <?=$taikhoan['chitiet'];?>
-                                                    </textarea>
+                                                        readonly><?=$taikhoan['chitiet'];?></textarea>
                                                 </td>
                                                 <td width="10%">
                                                     <button style="margin-bottom: 5px" type="button" class="btn btn-primary copy"
                                                         data-clipboard-target="#coypy<?=$taikhoan['id'];?>">
-                                                        <span><?=strtoupper(lang(55));?></span></button>
+                                                        <span class="uppercase"><?=lang(55)?></span></button>
 
                                                         <?php $phone = explode(' ', $taikhoan['chitiet'])[0];
                                                             if($taikhoan['accounttype'] == 'telegram') {?>

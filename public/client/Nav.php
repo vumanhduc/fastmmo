@@ -20,7 +20,7 @@
                     <div class="logged-user-w">
                         <div class="avatar-w"><img alt="" src="<?=BASE_URL('template/');?>img/avatar1.jpg"></div>
                         <div class="logged-user-info-w">
-                            <div class="logged-user-name"><?=strtoupper($getUser['username']);?></div>
+                            <div class="logged-user-name uppercase"><?=$getUser['username']?></div>
                             <div class="logged-user-role"><?=daily($getUser['chietkhau']);?></div>
                         </div>
                     </div>
@@ -157,7 +157,7 @@
                     <div class="logged-user-i">
                         <div class="avatar-w"><img alt="" src="<?=BASE_URL('template/');?>img/avatar1.jpg"></div>
                         <div class="logged-user-info-w">
-                            <div class="logged-user-name"><?=strtoupper($getUser['username']);?></div>
+                            <div class="logged-user-name uppercase"><?=$getUser['username']?></div>
                             <div class="logged-user-role"><?=daily($getUser['chietkhau']);?></div>
                         </div>
                         <div class="logged-user-toggler-arrow">
@@ -168,7 +168,7 @@
                                 <div class="avatar-w"><img alt="" src="<?=BASE_URL('template/');?>img/avatar1.jpg">
                                 </div>
                                 <div class="logged-user-info-w">
-                                    <div class="logged-user-name"><?=strtoupper($getUser['username']);?></div>
+                                    <div class="logged-user-name uppercase"><?=$getUser['username']?></div>
                                     <div class="logged-user-role"><?=daily($getUser['chietkhau']);?></div>
                                 </div>
                             </div>

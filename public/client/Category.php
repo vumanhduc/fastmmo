@@ -40,7 +40,7 @@
             </div>
             <div class="col-sm-12">
                 <div class="element-wrapper">
-                    <h6 class="element-header"><?=strtoupper($category['title']);?></h6>
+                    <h6 class="element-header uppercase"><?=$category['title']?></h6>
                     <div class="element-box-tp">
                         <div class="table-responsive">
                             <table class="table table-padded">

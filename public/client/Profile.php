@@ -88,7 +88,7 @@
             </div>
             <div class="col-sm-12">
                 <div class="element-wrapper">
-                    <div class="element-header"> <?=strtoupper(lang(57));?></div>
+                    <div class="element-header uppercase"><?=lang(57)?></div>
                     <div class="element-box">
                         <div class="table-responsive">
                             <table id="datatable" width="100%" class="table table-padded">

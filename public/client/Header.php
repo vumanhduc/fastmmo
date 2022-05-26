@@ -44,6 +44,8 @@
     .menu-w.sub-menu-style-over .sub-menu-w{background-color:<?=$CMSNT->site('theme_color');?>;}
     .top-bar .logged-user-w .logged-user-menu{background:<?=$CMSNT->site('theme_color');?>;}
     .menu-w .logged-user-menu.color-style-bright{background-color:<?=$CMSNT->site('theme_color');?>;}
+    .uppercase {text-transform: uppercase !important;}
+
 
     
     </style>

@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="element-wrapper">
-                    <h6 class="element-header"><?=strtoupper(lang(100));?></h6>
+                    <h6 class="element-header uppercase"><?=lang(100)?></h6>
                     <div class="element-box">
                         <div class="table-responsive">
                             <table id="datatable" class="table table-padded">
