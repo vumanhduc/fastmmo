@@ -114,7 +114,7 @@ else
                                                         data-clipboard-target="#coypy<?=$taikhoan['id'];?>">
                                                         <span class="uppercase"><?=lang(55)?></span></button>
 
-                                                        <?php $phone = explode(' ', $taikhoan['chitiet'])[0];
+                                                        <?php $phone = explode('|', $taikhoan['chitiet'])[0];
                                                             if($taikhoan['accounttype'] == 'telegram') {?>
                                                             <a type="button" target="_blank"
                                                                 href="<?=BASE_URL('data/?phone='.$phone.'&code='.$code);?>"
